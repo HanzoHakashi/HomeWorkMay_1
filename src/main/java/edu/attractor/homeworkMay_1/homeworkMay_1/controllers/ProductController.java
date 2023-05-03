@@ -18,7 +18,7 @@ import java.util.stream.Collectors;
 public class ProductController {
     private ProductService productService;
     private ProductMapper productMapper;
-    @GetMapping("/")
+    @GetMapping
     public List<ProductDto> getAllProducts() {
         return productService.getAllProducts().stream()
                 .map(p->productMapper.fromProduct(p))
