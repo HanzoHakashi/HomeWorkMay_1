@@ -7,3 +7,5 @@ CREATE TABLE products
     description varchar(255),
     price double precision
 )
+
+
