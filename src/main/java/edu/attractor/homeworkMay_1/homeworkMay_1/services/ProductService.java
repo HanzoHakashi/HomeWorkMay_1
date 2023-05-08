@@ -5,6 +5,7 @@ import edu.attractor.homeworkMay_1.homeworkMay_1.repositories.ProductRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -24,6 +25,9 @@ public class ProductService {
     }
 
     public List<Product> getAllProducts() {
-        return productRepository.findAll();
+        List<Product> productList = new ArrayList<>();
+        productRepository.findAll().forEach(productList::add);
+        return productList;
     }
+
 }
