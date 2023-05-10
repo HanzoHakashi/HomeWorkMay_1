@@ -1,9 +1,14 @@
 package edu.attractor.homeworkMay_1.homeworkMay_1.controllers;
 
 import edu.attractor.homeworkMay_1.homeworkMay_1.dtos.UserDto;
+import edu.attractor.homeworkMay_1.homeworkMay_1.entitys.User;
+import edu.attractor.homeworkMay_1.homeworkMay_1.exeption.GlobalExceptionHandler;
+import edu.attractor.homeworkMay_1.homeworkMay_1.exeption.UserNotFoundException;
 import edu.attractor.homeworkMay_1.homeworkMay_1.mappers.UserMapper;
 import edu.attractor.homeworkMay_1.homeworkMay_1.services.UserService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,9 +21,17 @@ public class UserController {
     private UserService userService;
     private UserMapper userMapper;
     @PostMapping("/searchByEmail/{email}")
-    public List<UserDto> searchByEmail(@PathVariable String email){
-        return userService.searchUsersByEmail(email).stream().map(p->userMapper.fromUser(p)).collect(Collectors.toList());
+    public ResponseEntity<UserDto> getUserByEmail(@PathVariable String email) {
+        User user = userService.searchUsersByEmail(email);
+        UserDto userDto = userMapper.fromUser(user);
+        return ResponseEntity.ok(userDto);
     }
+
+
+
+
+
+
 
     @PostMapping("/searchByUserName/{username}")
     public List<UserDto> searchByUserName(@PathVariable String username){

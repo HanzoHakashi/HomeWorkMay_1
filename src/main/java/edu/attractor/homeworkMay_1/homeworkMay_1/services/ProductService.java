@@ -39,6 +39,8 @@ public class ProductService {
         return products;
     }
 
+
+
     public Page<Product> searchProductsByPriceRange(Double minPrice, Double maxPrice, Pageable pageable) {
         Page<Product> products = productRepository.findByPriceBetween(minPrice, maxPrice, pageable);
         return products;

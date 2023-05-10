@@ -10,7 +10,7 @@ public interface UserRepository extends CrudRepository<User, Long> {
     List<User> findByFirstName(String firstname);
 
 
-    List<User> findByEmail(String email);
+    User findByEmail(String email);
 
     List<User> findByUsername(String username);
     @Query("SELECT CASE WHEN COUNT(u) > 0 THEN true ELSE false END FROM User u WHERE u.email = :email")
