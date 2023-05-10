@@ -29,4 +29,9 @@ public class UserController {
     public List<UserDto> searchByName(@PathVariable String name){
         return userService.searchUsersByName(name).stream().map(p->userMapper.fromUser(p)).collect(Collectors.toList());
     }
+
+    @PostMapping("/existsUser/{email}")
+    public boolean existsByEmail(@PathVariable String email){
+        return userService.existsByEmail(email);
+    }
 }

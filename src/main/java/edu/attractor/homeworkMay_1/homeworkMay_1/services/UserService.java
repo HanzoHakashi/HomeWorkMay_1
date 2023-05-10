@@ -22,4 +22,8 @@ public class UserService {
     public List<User> searchUsersByEmail(String email) {
         return userRepository.findByEmail(email);
     }
+
+    public boolean  existsByEmail(String email){
+        return userRepository.existsByEmail(email);
+    }
 }
