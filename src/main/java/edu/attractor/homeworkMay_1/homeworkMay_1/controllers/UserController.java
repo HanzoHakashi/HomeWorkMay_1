@@ -33,6 +33,7 @@ public class UserController {
 
 
 
+
     @PostMapping("/searchByUserName/{username}")
     public List<UserDto> searchByUserName(@PathVariable String username){
         return userService.searchUsersByUsername(username).stream().map(p->userMapper.fromUser(p)).collect(Collectors.toList());

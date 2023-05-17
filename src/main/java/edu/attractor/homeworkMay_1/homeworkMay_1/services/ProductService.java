@@ -18,6 +18,7 @@ import java.util.List;
 @AllArgsConstructor
 public class ProductService {
     final private ProductRepository productRepository;
+
     public Product saveProduct(String name, String image, Integer quantity,String description,Double price){
         Product product = Product.builder()
                 .name(name)

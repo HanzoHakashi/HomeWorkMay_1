@@ -14,6 +14,8 @@ public class UserMapper {
                 .password(user.getPassword())
                 .address(user.getAddress())
                 .username(user.getUsername())
+                .active(user.isActive())
+                .role(user.getRole())
                 .build();
     }
 }

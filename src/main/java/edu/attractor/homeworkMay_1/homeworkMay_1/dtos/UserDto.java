@@ -27,4 +27,6 @@ public class UserDto {
     private String password;
     private String address;
     private String username;
+    private boolean active;
+    private String role = "USER";
 }
