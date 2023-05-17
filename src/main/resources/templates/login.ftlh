@@ -10,13 +10,18 @@
 <body>
 <h2>Welcome, Adventurer!</h2>
 <form action="/login" method="post">
-    <label for="username">Username (your secret identity):</label><br>
+
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
+
+    <label for="username">Email</label><br>
     <input type="text" id="username" name="username" required><br><br>
 
-    <label for="password">Password (the key to unlock your potential):</label><br>
+    <label for="password">Password </label><br>
     <input type="password" id="password" name="password" required><br><br>
 
     <input type="submit" value="Unleash the Power">
+</form>
+
 </form>
 </body>
 </html>

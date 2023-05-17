@@ -27,6 +27,8 @@ public class UserDto {
     private String password;
     private String address;
     private String username;
-    private boolean active;
+    @Builder.Default
+    private boolean active = true;
+    @Builder.Default
     private String role = "USER";
 }

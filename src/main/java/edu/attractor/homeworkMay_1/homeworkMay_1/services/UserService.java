@@ -40,6 +40,8 @@ public class UserService {
                         .lastName(userDto.getLastName())
                         .address(userDto.getAddress())
                         .username(userDto.getUsername())
+                        .active(userDto.isActive())
+                        .role(userDto.getRole())
                 .password(encoder.encode(userDto.getPassword()))
                 .build());
     }

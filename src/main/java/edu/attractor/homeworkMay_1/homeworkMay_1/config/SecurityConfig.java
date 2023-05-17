@@ -11,6 +11,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationSuccessHandler;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 
 import javax.sql.DataSource;
@@ -30,39 +31,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
 
-//                .formLogin()
-//                .loginPage("/login")
-//                .successHandler(successHandler()) // Set the magnificent success handler
-//                .permitAll()
-//                .and()
-//                .logout()
-//                .logoutSuccessUrl("/")
-//                .permitAll()
-//                .and()
-//                .authorizeRequests()
-        http.formLogin(Customizer.withDefaults());
-//                .loginPage("/login")
-//                .failureUrl("/login?error=true");
 
-        http.logout(Customizer.withDefaults());
-//                .logoutUrl("/logout")
-//                .logoutSuccessUrl("/")
-//                .clearAuthentication(true)
-//                .invalidateHttpSession(true);
-//                http.authorizeRequests().antMatchers("/profile").authenticated()
-//                .anyRequest().permitAll()
-//                .and()
-//                .csrf().disable();
 
-        http.authorizeRequests()
-                .antMatchers("/profile")
-                .authenticated()
+        http
+                .formLogin()
+                .loginPage("/login")
+                .successHandler(successHandler())
+                .permitAll()
+                .and()
+                .logout()
+                .logoutUrl("/logout") // Set the logout URL
+                .logoutSuccessUrl("/login?logout")
+                .permitAll()
                 .and()
                 .authorizeRequests()
-                .anyRequest()
-                .permitAll();
-
-        http.csrf().disable();
+                .antMatchers("/profile").authenticated()
+                .anyRequest().permitAll()
+                .and()
+                .csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse());
     }
 
 
