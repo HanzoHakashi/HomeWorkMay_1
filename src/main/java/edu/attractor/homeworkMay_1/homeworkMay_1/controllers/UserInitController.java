@@ -1,6 +1,7 @@
 package edu.attractor.homeworkMay_1.homeworkMay_1.controllers;
 
 import edu.attractor.homeworkMay_1.homeworkMay_1.dtos.UserDto;
+import edu.attractor.homeworkMay_1.homeworkMay_1.mappers.UserMapper;
 import edu.attractor.homeworkMay_1.homeworkMay_1.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class UserInitController {
 
     private final UserService userService;
-
+    private UserMapper userMapper;
     @GetMapping("/register")
     public String registerGet() {
         return "register";

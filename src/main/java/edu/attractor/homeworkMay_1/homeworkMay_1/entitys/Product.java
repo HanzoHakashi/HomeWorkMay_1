@@ -4,7 +4,9 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name = "products")
@@ -21,8 +23,6 @@ public class Product {
     private String name;
     @Column(nullable = false)
     private String image;
-    @Column(nullable = false)
-    private Integer quantity;
     @Column(nullable = true)
     private String description;
     @Column(nullable = false)
@@ -30,6 +30,4 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
-    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-    private List<Comment> comments = new ArrayList<>();
 }

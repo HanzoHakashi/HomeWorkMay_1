@@ -18,4 +18,15 @@ public class UserMapper {
                 .role(user.getRole())
                 .build();
     }
+    public static User fromDto(UserDto userDto){
+        return User.builder()
+                .firstName(userDto.getFirstName())
+                .lastName(userDto.getLastName())
+                .email(userDto.getEmail())
+                .password(userDto.getPassword())
+                .address(userDto.getAddress())
+                .username(userDto.getUsername())
+                .active(userDto.isActive())
+                .role(userDto.getRole()).build();
+    }
 }

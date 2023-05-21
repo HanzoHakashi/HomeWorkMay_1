@@ -10,7 +10,15 @@ public class ProductMapper {
         return ProductDto.builder()
                 .name(product.getName())
                 .image(product.getImage())
-                .quantity(product.getQuantity())
+                .description(product.getDescription())
+                .price(product.getPrice())
+                .build();
+    }
+
+    public static Product fromDto(ProductDto product){
+        return Product.builder()
+                .name(product.getName())
+                .image(product.getImage())
                 .description(product.getDescription())
                 .price(product.getPrice())
                 .build();

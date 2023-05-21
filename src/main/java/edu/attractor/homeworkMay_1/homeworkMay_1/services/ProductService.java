@@ -1,7 +1,6 @@
 package edu.attractor.homeworkMay_1.homeworkMay_1.services;
 
 import edu.attractor.homeworkMay_1.homeworkMay_1.dtos.ProductDto;
-import edu.attractor.homeworkMay_1.homeworkMay_1.entitys.Category;
 import edu.attractor.homeworkMay_1.homeworkMay_1.entitys.Product;
 import edu.attractor.homeworkMay_1.homeworkMay_1.mappers.ProductMapper;
 import edu.attractor.homeworkMay_1.homeworkMay_1.repositories.ProductRepository;
@@ -10,25 +9,20 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
 public class ProductService {
     final private ProductRepository productRepository;
-
-    public Product saveProduct(String name, String image, Integer quantity,String description,Double price){
-        Product product = Product.builder()
-                .name(name)
-                .image(image)
-                .quantity(quantity)
-                .description(description)
-                .price(price)
-                .build();
-        return product;
+    final private ProductMapper productMapper;
+    public Product saveProduct(ProductDto productDto){
+      return productMapper.fromDto(productDto);
     }
+
+
 
     public List<Product> getAllProducts() {
         List<Product> productList = new ArrayList<>();
@@ -47,6 +41,10 @@ public class ProductService {
         return products;
     }
 
+
+    public Optional<Product> getProductById(Long productId) {
+        return productRepository.findById(productId);
+    }
 
 
 }
