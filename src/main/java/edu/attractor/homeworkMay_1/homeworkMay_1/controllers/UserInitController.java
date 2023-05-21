@@ -16,6 +16,10 @@ public class UserInitController {
 
     private final UserService userService;
     private UserMapper userMapper;
+    @GetMapping("/cart")
+    public String testSession(){
+        return "cart";
+    }
     @GetMapping("/register")
     public String registerGet() {
         return "register";

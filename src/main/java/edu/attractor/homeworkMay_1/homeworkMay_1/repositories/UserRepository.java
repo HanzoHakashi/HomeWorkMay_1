@@ -3,6 +3,7 @@ package edu.attractor.homeworkMay_1.homeworkMay_1.repositories;
 import edu.attractor.homeworkMay_1.homeworkMay_1.entitys.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 

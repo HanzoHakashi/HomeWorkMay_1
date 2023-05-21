@@ -35,7 +35,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
 
         http
-
                 .formLogin()
                 .loginPage("/login")
                 .successHandler(successHandler())
@@ -47,7 +46,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .and()
                 .authorizeRequests()
-                .antMatchers("/profile").authenticated()
+                .antMatchers("/cart").authenticated()
                 .anyRequest().permitAll()
                 .and()
                 .csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
