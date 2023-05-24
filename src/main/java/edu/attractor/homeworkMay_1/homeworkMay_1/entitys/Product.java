@@ -13,7 +13,7 @@ import java.util.Set;
 @Builder(toBuilder = true)
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
 @NoArgsConstructor(access = AccessLevel.PACKAGE)
-@Setter(value = AccessLevel.PACKAGE)
+@Setter
 @Getter
 public class Product {
     @Id
@@ -30,4 +30,6 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "category_id")
     private Category category;
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+    private List<ProductFeedback> feedbacks = new ArrayList<>();
 }
