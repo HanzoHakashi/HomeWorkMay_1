@@ -1,6 +1,5 @@
 package edu.attractor.homeworkMay_1.homeworkMay_1.controllers;
 
-import edu.attractor.homeworkMay_1.homeworkMay_1.dtos.ProductDto;
 import edu.attractor.homeworkMay_1.homeworkMay_1.entitys.Product;
 import edu.attractor.homeworkMay_1.homeworkMay_1.entitys.ProductFeedback;
 import edu.attractor.homeworkMay_1.homeworkMay_1.mappers.ProductMapper;
@@ -12,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
-import java.util.Random;
 
 @Controller
 @RequestMapping("/product/feedback")

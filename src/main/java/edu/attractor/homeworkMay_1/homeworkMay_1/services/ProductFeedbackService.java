@@ -1,6 +1,5 @@
 package edu.attractor.homeworkMay_1.homeworkMay_1.services;
 
-import edu.attractor.homeworkMay_1.homeworkMay_1.entitys.Product;
 import edu.attractor.homeworkMay_1.homeworkMay_1.entitys.ProductFeedback;
 import edu.attractor.homeworkMay_1.homeworkMay_1.repositories.ProductFeedbackRepository;
 import org.springframework.stereotype.Service;
