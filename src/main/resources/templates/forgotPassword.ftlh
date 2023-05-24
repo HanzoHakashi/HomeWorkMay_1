@@ -17,5 +17,6 @@
 <#if message?has_content>
 <p>${message}</p>
 </#if>
+<a href="/reset_password">Change Password</a>
 </body>
 </html>

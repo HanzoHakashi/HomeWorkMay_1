@@ -11,7 +11,7 @@ import java.util.List;
 public interface UserRepository extends CrudRepository<User, Long> {
     List<User> findByFirstName(String firstname);
 
-    @Query(value = "SELECT * FROM user WHERE token = :token", nativeQuery = true)
+
     User findByToken(@Param("token") String token);
     User findByEmail(String email);
 
