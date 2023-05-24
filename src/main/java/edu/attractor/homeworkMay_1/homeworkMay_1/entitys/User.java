@@ -16,7 +16,7 @@ import java.util.List;
 @Builder(toBuilder = true)
 @AllArgsConstructor(access = AccessLevel.PACKAGE)
 @NoArgsConstructor(access = AccessLevel.PACKAGE)
-@Setter(value = AccessLevel.PACKAGE)
+@Setter
 @Getter
 public class User implements UserDetails {
     @Id
@@ -32,6 +32,8 @@ public class User implements UserDetails {
     private String password;
     @Column(nullable = false)
     private String address;
+    @Column
+    private String token;
     @Column(nullable = false)
     private String username;
     @Column(nullable = false)

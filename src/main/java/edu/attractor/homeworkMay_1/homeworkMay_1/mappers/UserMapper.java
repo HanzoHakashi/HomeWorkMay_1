@@ -13,6 +13,7 @@ public class UserMapper {
                 .email(user.getEmail())
                 .password(user.getPassword())
                 .address(user.getAddress())
+                .token(user.getToken())
                 .username(user.getUsername())
                 .active(user.isActive())
                 .role(user.getRole())
@@ -25,6 +26,7 @@ public class UserMapper {
                 .email(userDto.getEmail())
                 .password(userDto.getPassword())
                 .address(userDto.getAddress())
+                .token(userDto.getToken())
                 .username(userDto.getUsername())
                 .active(userDto.isActive())
                 .role(userDto.getRole()).build();

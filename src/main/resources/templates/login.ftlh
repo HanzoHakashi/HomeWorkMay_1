@@ -20,6 +20,7 @@
     <input type="password" id="password" name="password" required><br><br>
 
     <input type="submit" value="Unleash the Power">
+    <a href="/user/forgotPassword">Forgot ur Password?</a>
 </form>
 
 </form>

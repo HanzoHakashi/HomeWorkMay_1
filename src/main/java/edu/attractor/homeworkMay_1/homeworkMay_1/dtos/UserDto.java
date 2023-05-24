@@ -26,6 +26,7 @@ public class UserDto {
     @Size(min = 8, max = 30)
     private String password;
     private String address;
+    private String token;
     private String username;
     @Builder.Default
     private boolean active = true;
