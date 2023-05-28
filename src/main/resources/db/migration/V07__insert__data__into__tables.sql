@@ -5,19 +5,19 @@ VALUES ('Электроника', 'Гаджеты и аксессуары'),
 
 
 INSERT INTO products (name, image, description, price, category_id)
-SELECT 'iPhone 12', 'Путь к картинке', 'Яблоко', 999.99, c.id
+SELECT 'PlayStation_5', 'PS5.jpg', 'Sony', 999.99, c.id
 FROM categories c
 WHERE c.name = 'Электроника';
 
 INSERT INTO products (name, image, description, price, category_id)
-SELECT 'Samsung Galaxy S21', 'Путь к картинке', 'Самсанг', 799.99, c.id
+SELECT 'S_23', 'S23.jpg', 'Samsung', 799.99, c.id
 FROM categories c
 WHERE c.name = 'Электроника';
 
 INSERT INTO products (name, image, description, price, category_id)
-SELECT 'Nike Air Max 270 React', 'Бархатные тяги кефтеме', 'Stylish and comfortable sneakers', 149.99, c.id
+SELECT 'Switch', 'ns1-1.jpg', 'Nintendo', 149.99, c.id
 FROM categories c
-WHERE c.name = 'Одежда';
+WHERE c.name = 'Электроника';
 
 
 INSERT INTO product_feedback (product_id, comment)

@@ -34,7 +34,6 @@
 
             const body = JSON.stringify({ productId });
 
-            // Make an API call to add the product to the cart
             const response = await fetch('/cart/add', {
                 method: 'POST',
                 headers,
